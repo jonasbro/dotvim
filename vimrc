@@ -108,3 +108,6 @@ endif
 let mapleader = ","
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
+" Highlight lines that are too long
+highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
