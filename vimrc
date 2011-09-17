@@ -36,12 +36,14 @@ if has("autocmd")
   autocmd FileType css  setlocal ts=2 sts=2 sw=2 noexpandtab
   autocmd FileType haml setlocal ts=2 sts=2 sw=2 noexpandtab
   autocmd FileType erb  setlocal ts=2 sts=2 sw=2 noexpandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
   " Treat .scss files as css
   autocmd BufNewFile,BufRead *.scss setfiletype css
+  " Treat .coffee files as javascript
+  autocmd BufNewFile,BufRead *.coffee setfiletype javascript
 
   " save and load code folding
   " autocmd BufWinLeave ?* mkview
