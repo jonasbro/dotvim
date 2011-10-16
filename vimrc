@@ -79,11 +79,15 @@ set number
 " word wrap
 set wrap linebreak nolist
 
-" Toggle spell checking on and off with `,s`
+" Toggle spell checking on and off with `\s`
 nmap <silent> <leader>s :set spell!<CR>
 
 " Set region to US English
 set spelllang=en_us
+
+" Code reviewing
+let g:CodeReviewer_reviewer="JB"  " Your initials
+let g:CodeReviewer_reviewFile=$HOME . "/code_review_JB.rev"
 
 if has("autocmd")
   " Enable filetype detection
