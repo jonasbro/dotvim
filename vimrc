@@ -4,20 +4,90 @@ call pathogen#infect()
 " non vi mode
 set nocompatible
 
+" modified buffers are called hidden
+set hidden
+
+" No beep noise. The t_vb bit removes any delay also
+set visualbell t_vb=
+" set noerrorbells
+
+" More universally accessible leader
+let mapleader = ","
+
+" Remeber last X commands. Default is 20
+set history=1000
+
+" show line numbers
+set number
+nmap <silent> <leader>n :silent :set number!<CR>
+nmap <silent> <leader>r :silent :set relativenumber!<CR>
+
+" word wrap
+set wrap linebreak nolist
+
+" Useful file/command completion
+set wildmenu
+set wildmode=list:longest
+
+"Ignore these files when completing names and in Explorer
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.swf,*.jpeg
+
+" Case smart searching
+set ignorecase
+set smartcase
+
+" Shortcut to rapidly toggle the highlighting of searches
+" nmap <leader>h :set hlsearch!<CR>
+
+" Highlight search terms...
+set hlsearch
+set incsearch " ...dynamically as they are typed.
+nmap <silent> <leader>h :silent :nohlsearch<CR>
+
+" Center screen when scrolling search results
+nmap n nzz
+nmap N Nzz
+
+" Map ESC
+imap jj <ESC>
+
+" Descriptive title
+set title
+
+set encoding=utf-8
+
+"Always show cursor position
+set ruler
+
+" More context around cursor
+set scrolloff=3
+
+" Scroll viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " code folding
 set foldmethod=indent
 
-" Shortcut to rapidly toggle the showing of invicibles
-nmap <leader>l :set list!<CR>
+" Store temporary files in a central spot
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Shortcut to rapidly toggle the highlighting of searches
-nmap <leader>h :set hlsearch!<CR>
+" Make jump to line *and* column default
+" nnoremap ' `
+" nnoremap ` '
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+" Shortcut to rapidly toggle the showing of invicibles
+nmap <leader>l :set list!<CR>
+
 " Soft tabs
 set ts=4 sts=2 sw=2 expandtab
+
+"Ctrl-tab to insert a hard tab
+imap <silent> <C-tab> <C-v><tab>
 
 " Color scheme
 colorscheme vibrantink
@@ -26,6 +96,9 @@ colorscheme vibrantink
 if has("autocmd")
   " Enable file type detection
   filetype on
+
+  " Enable filetype detection
+  filetype plugin indent on
 
   " Syntax of these languages is fussy over tabs Vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -48,6 +121,24 @@ if has("autocmd")
   " save and load code folding
   " autocmd BufWinLeave ?* mkview
   " autocmd BufWinEnter ?* silent loadview
+
+  " When editing a file jump to last cursor position
+  autocmd BufReadPost *
+   \ if line("'\"") > 1 && line("'\"") <= line("$") |
+   \   exe "normal! g`\"" |
+   \ endif
+
+  " Source the vimrc file after saving it
+  autocmd bufwritepost .vimrc source $MYVIMRC
+
+  " To create new file securely do: vim new.file.txt.gpg
+  " Your private key used to decrypt the text before viewing should
+  " be protected by a passphrase. Alternatively one could use
+  " a passphrase directly with symmetric encryption in the gpg commands below.
+  autocmd BufNewFile,BufReadPre *.gpg :set secure viminfo= noswapfile nobackup nowritebackup history=0 binary
+  autocmd BufReadPost *.gpg :%!gpg -d 2>/dev/null
+  autocmd BufWritePre *.gpg :%!gpg -e -r $GPGKEY 2>/dev/null
+  autocmd BufWritePost *.gpg u
 endif
 
 function! Preserve(command)
@@ -64,20 +155,21 @@ endfunction
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
+" Switch between buffers
+noremap <tab> gt
+noremap <S-tab> gT
+
+" close buffer
+nmap <leader>d :bd<CR>
+
+" close all buffers
+nmap <leader>D :bufdo bd<CR>
+
 " Swith focus in open windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-" modified buffers are called hidden
-set hidden
-
-" show line numbers
-set number
-
-" word wrap
-set wrap linebreak nolist
 
 " Toggle spell checking on and off with `\s`
 nmap <silent> <leader>s :set spell!<CR>
@@ -89,31 +181,18 @@ set spelllang=en_us
 let g:CodeReviewer_reviewer="JB"  " Your initials
 let g:CodeReviewer_reviewFile=$HOME . "/code_review_JB.rev"
 
-if has("autocmd")
-  " Enable filetype detection
-  filetype plugin indent on
-
-  " Restore cursor position
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-endif
-
 " Enable syntax highlighting
 if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 
-" Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
-
 " Shortcut to edit the vimrc
-let mapleader = ","
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " Highlight lines that are too long
 highlight OverLength ctermbg=darkgray ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+" remember some stuff after quiting vim:
+" marks, registers, searches, buffer list
+set viminfo='20,<50,s10,h,%
