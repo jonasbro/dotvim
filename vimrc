@@ -48,6 +48,9 @@ nmap <leader>h :nohlsearch<CR>
 nmap n nzz
 nmap N Nzz
 
+" Search for files in project
+map <leader>f :FufCoverageFile<CR>
+
 " Map ESC
 imap jj <ESC>
 
