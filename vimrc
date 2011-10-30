@@ -19,8 +19,8 @@ set history=1000
 
 " show line numbers
 set number
-nmap <silent> <leader>n :silent :set number!<CR>
-nmap <silent> <leader>r :silent :set relativenumber!<CR>
+nmap <leader>n :set number!<CR>
+nmap <leader>rn :set relativenumber!<CR>
 
 " word wrap
 set wrap linebreak nolist
@@ -42,7 +42,7 @@ set smartcase
 " Highlight search terms...
 set hlsearch
 set incsearch " ...dynamically as they are typed.
-nmap <silent> <leader>h :silent :nohlsearch<CR>
+nmap <leader>h :nohlsearch<CR>
 
 " Center screen when scrolling search results
 nmap n nzz
@@ -86,8 +86,8 @@ nmap <leader>l :set list!<CR>
 " Soft tabs
 set ts=4 sts=2 sw=2 expandtab
 
-"Ctrl-tab to insert a hard tab
-imap <silent> <C-tab> <C-v><tab>
+"Ctrl-t to insert a hard tab
+imap <C-t> <C-v><tab>
 
 " Color scheme
 colorscheme vibrantink
@@ -171,8 +171,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Toggle spell checking on and off with `\s`
-nmap <silent> <leader>s :set spell!<CR>
+" Toggle the taglist window
+map <leader>t :TlistToggle<CR>
+
+" Toggle spell checking on and off
+nmap <leader>s :set spell!<CR>
 
 " Set region to US English
 set spelllang=en_us
