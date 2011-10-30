@@ -13,3 +13,6 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule init
     env GIT_SSL_NO_VERIFY=true git submodule update
 
+Install dependencies
+
+    sudo aptitude install exuberant-ctags
