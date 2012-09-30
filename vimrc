@@ -202,3 +202,6 @@ match OverLength /\%81v.\+/
 " remember some stuff after quiting vim:
 " marks, registers, searches, buffer list
 set viminfo='20,<50,s10,h,%
+
+" use ack-grep instead of grep
+set grepprg=ack-grep\ -a
