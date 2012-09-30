@@ -26,10 +26,6 @@
 	path = bundle/textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
 	ignore = dirty
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = https://github.com/mhz/vim-matchit.git
-	ignore = dirty
 [submodule "bundle/abolish"]
 	path = bundle/abolish
 	url = https://github.com/tpope/vim-abolish.git
