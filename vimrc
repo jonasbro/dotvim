@@ -41,8 +41,8 @@ set smartcase
 
 " Highlight search terms...
 set hlsearch
-set incsearch " ...dynamically as they are typed.
-nmap <leader>h :nohlsearch<CR>
+"set incsearch " ...dynamically as they are typed.
+nmap <leader>h :set hlsearch!<CR>
 
 " Center screen when scrolling search results
 nmap n nzz
@@ -52,7 +52,13 @@ nmap N Nzz
 map <leader>f :FufCoverageFile<CR>
 
 " Map ESC
-imap jj <ESC>
+imap jj <ESC>l
+
+" Common typos in commands
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
 
 " Descriptive title
 set title
@@ -205,3 +211,6 @@ set viminfo='20,<50,s10,h,%
 
 " use ack-grep instead of grep
 set grepprg=ack-grep\ -a
+
+" textobj-rubyblock requires matchit.vim
+runtime macros/matchit.vim
