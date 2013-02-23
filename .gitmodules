@@ -42,3 +42,6 @@
 	path = bundle/ri
 	url = https://github.com/danchoi/ri.vim.git
 	ignore = dirty
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
