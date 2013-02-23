@@ -16,3 +16,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
 Install dependencies
 
     sudo aptitude install exuberant-ctags
+
+Update bundles
+
+    git submodule foreach git pull origin master
