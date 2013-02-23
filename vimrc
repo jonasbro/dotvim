@@ -174,17 +174,37 @@ nmap <leader>d :bd<CR>
 " close all buffers
 nmap <leader>D :bufdo bd<CR>
 
+" move down/up single row
+nnoremap j gj
+nnoremap k gk
+
 " Swith focus in open windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" movement on commandline
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><Delete>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>d <S-right><Delete>
+cnoremap <C-g>  <C-c>
+
 " Toggle the taglist window
 map <leader>t :TlistToggle<CR>
 
 " Toggle spell checking on and off
 nmap <leader>s :set spell!<CR>
+
+" when pasting text keep formatting
+nmap <leader>p :set paste!<CR>
 
 " Set region to US English
 set spelllang=en_us
