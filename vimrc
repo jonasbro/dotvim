@@ -45,7 +45,7 @@ set splitright
 
 " Highlight search terms...
 set hlsearch
-"set incsearch " ...dynamically as they are typed.
+set incsearch " ...dynamically as they are typed.
 nmap <leader>h :set hlsearch!<CR>
 
 " Center screen when scrolling search results
