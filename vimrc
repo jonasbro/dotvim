@@ -236,7 +236,7 @@ match OverLength /\%81v.\+/
 set viminfo='20,<50,s10,h,%
 
 " use ack-grep instead of grep
-set grepprg=ack-grep\ -a
+set grepprg=ack-grep
 
 " textobj-rubyblock requires matchit.vim
 runtime macros/matchit.vim
