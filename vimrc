@@ -36,6 +36,10 @@ set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.
 set ignorecase
 set smartcase
 
+" saner defaults for splitting
+set splitbelow
+set splitright
+
 " Shortcut to rapidly toggle the highlighting of searches
 " nmap <leader>h :set hlsearch!<CR>
 
