@@ -130,6 +130,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.scss setfiletype css
   " Treat .coffee files as javascript
   autocmd BufNewFile,BufRead *.coffee setfiletype javascript
+  " Treat .md files as markdown, not as Modula-2
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
   " save and load code folding
   " autocmd BufWinLeave ?* mkview
