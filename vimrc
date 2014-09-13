@@ -240,3 +240,6 @@ set grepprg=ack-grep
 
 " textobj-rubyblock requires matchit.vim
 runtime macros/matchit.vim
+
+" Redbet: run rspec test on current file in env test
+map <leader>m :w\|:!RB_ENV=test ruby -I '.' -S rspec %<CR>
