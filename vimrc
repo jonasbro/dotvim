@@ -58,7 +58,7 @@ nmap <leader>h :set hlsearch!<CR>
 map <leader>f :FufCoverageFile<CR>
 
 " Map ESC
-imap jj <ESC>l
+imap jk <ESC>l
 
 " Common typos in commands
 :command WQ wq
