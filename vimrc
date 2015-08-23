@@ -4,8 +4,6 @@ call pathogen#infect()
 " non vi mode
 set nocompatible
 
-autocmd BufEnter *.rb source ~/.vim/rb.vim
-
 " modified buffers are called hidden
 set hidden
 
