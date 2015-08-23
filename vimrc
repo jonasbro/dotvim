@@ -195,6 +195,9 @@ cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
 
+" Can't be bothered to understand ESC vs <c-c> in insert mode
+imap <c-c> <esc>
+
 " Toggle the taglist window
 map <leader>t :TlistToggle<CR>
 
