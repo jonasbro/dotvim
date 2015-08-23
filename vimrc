@@ -54,10 +54,10 @@ map <leader>f :FufCoverageFile<CR>
 imap jk <ESC>l
 
 " Common typos in commands
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+:command! WQ wq
+:command! Wq wq
+:command! W w
+:command! Q q
 
 " Descriptive title
 set title
