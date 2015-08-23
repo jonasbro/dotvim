@@ -212,9 +212,7 @@ let g:CodeReviewer_reviewer="JB"  " Your initials
 let g:CodeReviewer_reviewFile=$HOME . "/code_review_JB.rev"
 
 " Enable syntax highlighting
-if &t_Co > 2 || has("gui_running")
-  syntax on
-endif
+syntax on
 
 " Shortcut to edit the vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
