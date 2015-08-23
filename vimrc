@@ -108,9 +108,6 @@ set ts=4 sts=2 sw=2 expandtab
 "Ctrl-t to insert a hard tab
 imap <C-t> <C-v><tab>
 
-" Color scheme
-colorscheme vibrantink
-
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
   " Enable file type detection
@@ -213,6 +210,13 @@ let g:CodeReviewer_reviewFile=$HOME . "/code_review_JB.rev"
 
 " Enable syntax highlighting
 syntax on
+
+" When ANSI 16 not used
+" let g:solarized_termcolors=256
+
+" Color scheme
+set background=dark
+colorscheme solarized
 
 " Shortcut to edit the vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
