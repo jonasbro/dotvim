@@ -40,13 +40,12 @@ set smartcase
 set splitbelow
 set splitright
 
-" Shortcut to rapidly toggle the highlighting of searches
-" nmap <leader>h :set hlsearch!<CR>
-
 " Highlight search terms...
 set hlsearch
 set incsearch " ...dynamically as they are typed.
 nmap <leader>h :set hlsearch!<CR>
+" Switch off highlighting current search terms
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
 " Search for files in project
 map <leader>f :FufCoverageFile<CR>
