@@ -48,10 +48,6 @@ set hlsearch
 set incsearch " ...dynamically as they are typed.
 nmap <leader>h :set hlsearch!<CR>
 
-" Center screen when scrolling search results
-" nmap n nzz
-" nmap N Nzz
-
 " Search for files in project
 map <leader>f :FufCoverageFile<CR>
 
