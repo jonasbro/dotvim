@@ -47,9 +47,6 @@ nmap <leader>h :set hlsearch!<CR>
 " Switch off highlighting current search terms
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
-" Search for files in project
-map <leader>f :FufCoverageFile<CR>
-
 " Map ESC
 imap jk <ESC>l
 
