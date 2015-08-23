@@ -47,6 +47,9 @@ nmap <leader>h :set hlsearch!<CR>
 " Switch off highlighting current search terms
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
+" Fix slow O inserts
+:set timeout timeoutlen=1000 ttimeoutlen=100
+
 " Map ESC
 imap jk <ESC>l
 
