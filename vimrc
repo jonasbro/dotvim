@@ -53,6 +53,14 @@ nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " Map ESC
 imap jk <ESC>l
 
+" umlauts with en layout
+imap <leader>[ å
+imap <leader>{ Å
+imap <leader>' ä
+imap <leader>" Ä
+imap <leader>; ö
+imap <leader>: Ö
+
 " Common typos in commands
 :command! WQ wq
 :command! Wq wq
