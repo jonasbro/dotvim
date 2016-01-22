@@ -51,3 +51,6 @@
 [submodule "bundle/syntax-range"]
 	path = bundle/syntax-range
 	url = https://github.com/vim-scripts/SyntaxRange.git
+[submodule "bundle/vim-markdown-folding"]
+	path = bundle/vim-markdown-folding
+	url = https://github.com/nelstrom/vim-markdown-folding.git
