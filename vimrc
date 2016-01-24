@@ -12,7 +12,7 @@ set visualbell t_vb=
 " set noerrorbells
 
 " More universally accessible leader
-let mapleader = ","
+let mapleader = " "
 
 " Remeber last X commands. Default is 20
 set history=1000
