@@ -171,8 +171,8 @@ if has("autocmd")
 endif
 
 " Switch between buffers
-noremap <tab> gt
-noremap <S-tab> gT
+" noremap <tab> gt
+" noremap <S-tab> gT
 
 " close buffer
 nmap <leader>d :bd<CR>
